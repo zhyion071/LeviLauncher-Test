@@ -205,6 +205,7 @@ public class MinecraftLauncher {
             launchIntent.putExtra("DISABLE_SPLASH_SCREEN", true);
         }
         fillIntentWithStoragePaths(launchIntent, version);
+        LauncherApplication.syncDataDirectories(context);
         launchIntent.setClass(context, MinecraftLoadingActivity.class);
         launchIntent.putExtra(EXTRA_GAME_VERSION, version);
         launchIntent.putExtra("MODS_ENABLED", modsEnabled);
